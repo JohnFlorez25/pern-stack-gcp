@@ -1,3 +1,19 @@
+CREATE TABLE products (
+    id INT UNIQUE,
+    name VARCHAR(50),
+    price INT,
+    on_sale boolean
+);
+
+CREATE TABLE restaurants (
+    id INT UNIQUE,
+    name VARCHAR(50),
+    location VARCHAR(50),
+    price_range INT
+);
+
+INSERT INTO restaurants (id, name, location, price_range) values (123, 'mcdonals', 'new york', 3);
+
 CREATE TABLE reviews (
     id BIGSERIAL NOT NULL PRIMARY KEY,
     restaurant_id BIGINT NOT NULL REFERENCES restaurants(id),
